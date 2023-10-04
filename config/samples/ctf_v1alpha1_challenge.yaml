@@ -1,0 +1,12 @@
+apiVersion: ctf.thegoose.work/v1alpha1
+kind: Challenge
+metadata:
+  labels:
+    app.kubernetes.io/name: challenge
+    app.kubernetes.io/instance: challenge-sample
+    app.kubernetes.io/part-of: k8s-ctf
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: k8s-ctf
+  name: challenge-sample
+spec:
+  # TODO(user): Add fields here
