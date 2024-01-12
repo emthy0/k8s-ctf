@@ -48,7 +48,8 @@ type ChallengeReconciler struct {
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.14.1/pkg/reconcile
 func (r *ChallengeReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	_ = log.FromContext(ctx)
-
+	challenge := &ctfv1alpha1.Challenge{}
+	err := r.Get(ctx, req.NamespacedName, challenge)
 	// TODO(user): your logic here
 
 	return ctrl.Result{}, nil

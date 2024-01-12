@@ -1,0 +1,59 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - ctf.thegoose.work
+  resources:
+  - challenges
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ctf.thegoose.work
+  resources:
+  - challenges/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ctf.thegoose.work
+  resources:
+  - challenges/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - ctf.thegoose.work
+  resources:
+  - privatechallenges
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ctf.thegoose.work
+  resources:
+  - privatechallenges/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ctf.thegoose.work
+  resources:
+  - privatechallenges/status
+  verbs:
+  - get
+  - patch
+  - update
